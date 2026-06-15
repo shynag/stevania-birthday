@@ -6,7 +6,7 @@ import Surprise from "@/components/Surprise";
 import Image from "next/image";
 
 export default function Home() {
-  const birthday = "2025-06-19T00:00:00";
+  const birthday = "2026-06-19T00:00:00";
 
   const isBirthdayPassed = () => new Date() > new Date(birthday);
 
@@ -30,10 +30,10 @@ export default function Home() {
         ) : (
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-200 drop-shadow-lg [text-shadow:_3px_3px_0_black]">
-              A Special Surprise is Coming Soon!
+              Kejutan Spesial Akan Segera Tiba!
             </h1>
-            <p className="mt-3 text-base sm:text-lg md:text-xl text-gray-200 drop-shadow-md font-sans">
-              Counting down to your special day.
+            <p className="mt-3 text-base sm:text-lg md:text-xl text-gray-200 drop-shadow-md font-sans [text-shadow:_2px_2px_0_black]">
+              Menghitung mundur menuju hari spesialmu.
             </p>
             <div className="mt-10 flex justify-center">
               <Countdown
@@ -41,6 +41,17 @@ export default function Home() {
                 onComplete={handleCountdownComplete}
               />
             </div>
+            {/* Tombol Demo hanya untuk development */}
+            {process.env.NODE_ENV === "development" && (
+              <div className="mt-8">
+                <button
+                  onClick={handleCountdownComplete}
+                  className="px-4 py-2 bg-yellow-400 text-black font-bold rounded-lg shadow-md hover:bg-yellow-500"
+                >
+                  Lihat Demo
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

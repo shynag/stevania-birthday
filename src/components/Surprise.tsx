@@ -14,7 +14,8 @@ const Surprise = () => {
 
   // --- TEMPATKAN KODE VOUCHER ANDA DI SINI ---
   const voucherCode = "KODE-VIDIO-DARI-SHOPEE";
-  const youtubePlaylistUrl = "https://music.youtube.com/playlist?list=PL_your_playlist_id";
+  const youtubePlaylistUrl =
+    "https://music.youtube.com/playlist?list=PL_your_playlist_id";
 
   const [showCode, setShowCode] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
@@ -121,7 +122,12 @@ const Surprise = () => {
           <div className="bg-black/20 p-8 rounded-lg">
             <h3 className="text-2xl font-bold text-white">KONSER SPESIAL</h3>
             <p className="text-white/80">Playlist Ulang Tahunmu</p>
-            <a href={youtubePlaylistUrl} target="_blank" rel="noopener noreferrer" className="mt-6 inline-block bg-black text-white font-black text-xl py-3 px-8 rounded-lg shadow-lg hover:bg-gray-800 transition-colors">
+            <a
+              href={youtubePlaylistUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block bg-black text-white font-black text-xl py-3 px-8 rounded-lg shadow-lg hover:bg-gray-800 transition-colors"
+            >
               LIHAT DAFTAR LAGU
             </a>
           </div>
@@ -138,15 +144,23 @@ const Surprise = () => {
               Paket Langganan Vidio Platinum (30 Hari)
             </p>
             {!showCode ? (
-              <div onClick={() => setShowCode(true)} className="mt-6 bg-black text-white font-black text-xl md:text-2xl py-3 rounded-lg shadow-lg hover:bg-gray-800 transition-colors cursor-pointer">
+              <div
+                onClick={() => setShowCode(true)}
+                className="mt-6 bg-black text-white font-black text-xl md:text-2xl py-3 rounded-lg shadow-lg hover:bg-gray-800 transition-colors cursor-pointer"
+              >
                 KLAIM KODE VOUCHER
               </div>
             ) : (
               <div className="mt-6 text-center">
                 <p className="text-sm text-black font-sans">Kode Vouchermu:</p>
                 <div className="my-2 p-3 bg-white/80 border-2 border-dashed border-black rounded-lg flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-                  <p className="text-xl sm:text-2xl font-mono tracking-widest text-black break-all">{voucherCode}</p>
-                  <button onClick={handleCopy} className="px-3 py-1 bg-black text-white text-sm font-sans rounded-md hover:bg-gray-700 transition-colors w-full sm:w-auto">
+                  <p className="text-xl sm:text-2xl font-mono tracking-widest text-black break-all">
+                    {voucherCode}
+                  </p>
+                  <button
+                    onClick={handleCopy}
+                    className="px-3 py-1 bg-black text-white text-sm font-sans rounded-md hover:bg-gray-700 transition-colors w-full sm:w-auto"
+                  >
                     {isCopied ? "Tersalin!" : "Salin"}
                   </button>
                 </div>
@@ -154,9 +168,16 @@ const Surprise = () => {
                   <p className="font-bold mb-1">Cara Redeem di iPhone:</p>
                   <ol className="list-decimal list-inside">
                     <li>Buka browser (Safari/Chrome).</li>
-                    <li>Masuk ke akun di <strong>vidio.com</strong>.</li>
-                    <li>Pilih menu <strong>"Akun Saya"</strong> &gt;{" "}<strong>"Langganan & Pembelian"</strong>.</li>
-                    <li>Klik <strong>"Gunakan Kode Voucher"</strong>.</li>
+                    <li>
+                      Masuk ke akun di <strong>vidio.com</strong>.
+                    </li>
+                    <li>
+                      Pilih menu <strong>"Akun Saya"</strong> &gt;{" "}
+                      <strong>"Langganan & Pembelian"</strong>.
+                    </li>
+                    <li>
+                      Klik <strong>"Gunakan Kode Voucher"</strong>.
+                    </li>
                     <li>Masukkan kode di atas lalu klik "Terapkan".</li>
                   </ol>
                 </div>

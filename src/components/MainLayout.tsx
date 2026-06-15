@@ -3,20 +3,29 @@
 import { useState } from "react";
 import MusicPlayer from "@/components/MusicPlayer";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import ThemedLoader from "./ThemedLoader";
 
 export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [isInteracting, setIsInteracting] = useState(false);
+  const [needsInteraction, setNeedsInteraction] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadComplete = () => {
+    setIsLoading(false);
+  };
 
   return (
     <>
-      <MusicPlayer onInteractionChange={setIsInteracting} />
+      {isLoading && <ThemedLoader />}
+      <MusicPlayer 
+        onInteractionChange={setNeedsInteraction}
+        onLoadComplete={handleLoadComplete}
+      />
       <AnimatedBackground />
-      {/* Konten utama hanya akan terlihat jika tidak ada overlay interaksi */}
-      <div className={isInteracting ? 'invisible' : 'visible'}>
+      <div className={(needsInteraction || isLoading) ? 'invisible' : 'visible'}>
         {children}
       </div>
     </>

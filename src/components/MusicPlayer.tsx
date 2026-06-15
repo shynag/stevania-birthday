@@ -4,9 +4,10 @@ import { useState, useRef, useEffect } from "react";
 
 interface MusicPlayerProps {
   onInteractionChange: (needsInteraction: boolean) => void;
+  onLoadComplete: () => void;
 }
 
-const MusicPlayer = ({ onInteractionChange }: MusicPlayerProps) => {
+const MusicPlayer = ({ onInteractionChange, onLoadComplete }: MusicPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [needsInteraction, setNeedsInteraction] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -27,11 +28,14 @@ const MusicPlayer = ({ onInteractionChange }: MusicPlayerProps) => {
       } catch (err) {
         console.warn("Autoplay prevented, will wait for user interaction.", err);
         setNeedsInteraction(true);
+      } finally {
+        // Beri tahu parent bahwa proses loading/pengecekan selesai
+        onLoadComplete();
       }
     };
 
     tryPlay();
-  }, []);
+  }, [onLoadComplete]);
 
   useEffect(() => {
     const audio = audioRef.current;

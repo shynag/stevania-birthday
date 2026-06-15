@@ -56,3 +56,44 @@
   font-size: 1.2em;
   filter: brightness(0.8);
 }
+
+/* Themed Heart Loader */
+@keyframes heart-beat {
+  0%,
+  40%,
+  100% {
+    transform: rotate(45deg) scale(1);
+    background-color: #e5e7eb; /* gray-200 */
+  }
+  20% {
+    transform: rotate(45deg) scale(1.2);
+    background-color: #f87171; /* red-400 */
+  }
+}
+
+.heart-loader {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  animation: heart-beat 1.4s infinite;
+}
+
+.heart-loader::before,
+.heart-loader::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+.heart-loader::before {
+  top: 0;
+  left: -12px;
+}
+
+.heart-loader::after {
+  top: -12px;
+  left: 0;
+}
