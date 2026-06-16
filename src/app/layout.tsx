@@ -11,11 +11,11 @@ const luckiestGuy = Luckiest_Guy({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stevaniabirthday.vercel.app/"), // GANTI DENGAN URL VERCEL ANDA!
-  title: "A Special Surprise!",
-  description: "A special surprise is waiting for you.",
+  title: "Kejutan Ulang Tahun Spesial untuk Stevania Eka Lupita Sari!",
+  description: "Sebuah kejutan spesial menantimu! Buka sekarang untuk merayakan hari spesialmu.",
   openGraph: {
-    title: "A Special Surprise!",
-    description: "A special surprise is waiting for you.",
+    title: "Kejutan Ulang Tahun Spesial untuk Stevania Eka Lupita Sari!",
+    description: "Sebuah kejutan spesial menantimu! Buka sekarang untuk merayakan hari spesialmu.",
     images: [
       {
         url: "/thumbnail.png", // Ini akan otomatis menjadi absolut dengan metadataBase
