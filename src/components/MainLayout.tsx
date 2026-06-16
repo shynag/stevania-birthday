@@ -4,6 +4,7 @@ import { useState } from "react";
 import MusicPlayer from "@/components/MusicPlayer";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import ThemedLoader from "./ThemedLoader";
+import Preloader from "./Preloader";
 
 export default function MainLayout({
   children,
@@ -19,7 +20,12 @@ export default function MainLayout({
 
   return (
     <>
-      {isLoading && <ThemedLoader />}
+      {isLoading && (
+        <>
+          <ThemedLoader />
+          <Preloader />
+        </>
+      )}
       <MusicPlayer 
         onInteractionChange={setNeedsInteraction}
         onLoadComplete={handleLoadComplete}
