@@ -158,6 +158,9 @@ const Surprise = () => {
               Playlist Spesial Buat Kamu
             </h2>
             <div className="bg-black/20 p-8 rounded-lg">
+              <div className="w-full aspect-square max-w-[200px] mx-auto mb-4 rounded-md overflow-hidden">
+                <Image src="https://via.placeholder.com/500x500.png?text=Cover+Playlist" alt="Playlist Cover" width={500} height={500} className="w-full h-full object-cover" />
+              </div>
               <h3 className="text-2xl font-bold text-white">KONSER SPESIAL</h3>
               <p className="text-white/80">Playlist Ulang Tahunmu</p>
               <a
@@ -166,7 +169,7 @@ const Surprise = () => {
                 rel="noopener noreferrer"
                 className="mt-6 inline-block bg-black text-white font-black text-xl py-3 px-8 rounded-lg shadow-lg hover:bg-gray-800 transition-colors"
               >
-                LIHAT DAFTAR LAGU
+                LIHAT PLAYLIST
               </a>
             </div>
           </div>

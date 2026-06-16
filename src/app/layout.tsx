@@ -12,6 +12,21 @@ const luckiestGuy = Luckiest_Guy({
 export const metadata: Metadata = {
   title: "A Special Surprise!",
   description: "A special surprise is waiting for you.",
+  openGraph: {
+    title: "A Special Surprise!",
+    description: "A special surprise is waiting for you.",
+    images: [
+      {
+        url: "/thumbnail.png",
+        width: 1200,
+        height: 630,
+        alt: "Birthday Surprise",
+      },
+    ],
+  },
+  icons: {
+    icon: "/thumbnail.png",
+  },
 };
 
 export default function RootLayout({
