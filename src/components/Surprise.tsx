@@ -223,7 +223,7 @@ const Surprise = () => {
                       </li>
                       <li>
                         Pilih menu <strong>"Akun Saya"</strong> &gt;{" "}
-                        <strong>"Langganan & Pembelian"</strong>.
+                        <strong>"Promo Voucher"</strong>.
                       </li>
                       <li>
                         Klik <strong>"Gunakan Kode Voucher"</strong>.
