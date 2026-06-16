@@ -9,10 +9,8 @@ const luckiestGuy = Luckiest_Guy({
   variable: "--font-luckiest-guy",
 });
 
-// Provide a metadata base URL (change this to your production URL)
-export const metadataBase = new URL("https://stevaniabirthday.vercel.app/");
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://stevaniabirthday.vercel.app/"), // GANTI DENGAN URL VERCEL ANDA!
   title: "A Special Surprise!",
   description: "A special surprise is waiting for you.",
   openGraph: {
@@ -20,7 +18,7 @@ export const metadata: Metadata = {
     description: "A special surprise is waiting for you.",
     images: [
       {
-        url: new URL("/thumbnail.png", metadataBase).toString(),
+        url: "/thumbnail.png", // Ini akan otomatis menjadi absolut dengan metadataBase
         width: 1200,
         height: 630,
         alt: "Birthday Surprise",
@@ -28,11 +26,9 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: new URL("/thumbnail.png", metadataBase).toString(),
+    icon: "/thumbnail.png",
   },
 };
-
-// (metadataBase declared above)
 
 export default function RootLayout({
   children,
