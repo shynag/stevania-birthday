@@ -15,8 +15,8 @@ const Surprise = () => {
   ];
   const voucherCode = "KODE-VIDIO-DARI-SHOPEE";
   const youtubePlaylistUrl =
-    "https://music.youtube.com/playlist?list=PL_your_playlist_id";
-  const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent("Makasih yaa kejutannyaa ❤️")}`; // GANTI DENGAN NOMOR WA ANDA
+    "https://music.youtube.com/playlist?list=PLZPodkq2CagfHuGtkJEY-vQvWgkNJBtp7&si=PZNzep2RLzm1ZzEf";
+  const whatsappUrl = `https://wa.me/6285800509720?text=${encodeURIComponent("Makasih yaa kejutannyaa, muahhh ❤️")}`; // GANTI DENGAN NOMOR WA ANDA
 
   const panels = [
     { type: "pesan" },
@@ -159,7 +159,13 @@ const Surprise = () => {
             </h2>
             <div className="bg-black/20 p-8 rounded-lg">
               <div className="w-full aspect-square max-w-[200px] mx-auto mb-4 rounded-md overflow-hidden">
-                <Image src="https://via.placeholder.com/500x500.png?text=Cover+Playlist" alt="Playlist Cover" width={500} height={500} className="w-full h-full object-cover" />
+                <Image
+                  src="/playlist.png"
+                  alt="Playlist Cover"
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-2xl font-bold text-white">KONSER SPESIAL</h3>
               <p className="text-white/80">Playlist Ulang Tahunmu</p>

@@ -3,6 +3,8 @@ import Image from "next/image";
 // Daftar semua gambar yang ingin di-preload
 const imagesToPreload = [
   "/logo_vidio.png",
+  "/playlist.png", // Ditambahkan
+  "/thumbnail.png", // Ditambahkan
   "/person/foto1.jpg",
   "/person/foto2.jpg",
   "/person/foto3.jpg",
