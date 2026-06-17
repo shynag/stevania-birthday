@@ -41,8 +41,8 @@ export default function Home() {
                 onComplete={handleCountdownComplete}
               />
             </div>
-            {/* Tombol Demo hanya untuk development */}
-            {process.env.NODE_ENV === "development" && (
+            {/* Tombol Demo */}
+            {(process.env.NODE_ENV === "development" || process.env.NEXT_PUBLIC_SHOW_DEMO_BUTTON === "true") && (
               <div className="mt-8">
                 <button
                   onClick={handleCountdownComplete}
