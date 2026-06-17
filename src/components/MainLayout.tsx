@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MusicPlayer from "@/components/MusicPlayer";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import ThemedLoader from "./ThemedLoader";
@@ -12,25 +12,30 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   const [needsInteraction, setNeedsInteraction] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isMusicPlayerReady, setIsMusicPlayerReady] = useState(false);
+  const [areImagesLoaded, setAreImagesLoaded] = useState(false);
 
-  const handleLoadComplete = () => {
-    setIsLoading(false);
+  // Loading screen is active until both music player and images are ready
+  const isLoading = !isMusicPlayerReady || !areImagesLoaded;
+
+  const handleMusicPlayerLoadComplete = () => {
+    setIsMusicPlayerReady(true);
+  };
+
+  const handleImagesLoaded = () => {
+    setAreImagesLoaded(true);
   };
 
   return (
     <>
-      {isLoading && (
-        <>
-          <ThemedLoader />
-          <Preloader />
-        </>
-      )}
+      {isLoading && <ThemedLoader />}
       <MusicPlayer 
         onInteractionChange={setNeedsInteraction}
-        onLoadComplete={handleLoadComplete}
+        onLoadComplete={handleMusicPlayerLoadComplete}
       />
       <AnimatedBackground />
+      <Preloader onImagesLoaded={handleImagesLoaded} /> {/* Preloader selalu aktif di background */}
+      
       <div className={(needsInteraction || isLoading) ? 'invisible' : 'visible'}>
         {children}
       </div>
