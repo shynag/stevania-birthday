@@ -14,7 +14,8 @@ const Surprise = () => {
     "/person/foto6.jpg",
   ];
   // Read voucher code from environment (exposed to client by NEXT_PUBLIC_ prefix)
-  const voucherCode = process.env.NEXT_PUBLIC_VOUCHER_CODE || "KODE-VIDIO-DARI-SHOPEE";
+  const voucherCode =
+    process.env.NEXT_PUBLIC_VOUCHER_CODE || "KODE-VIDIO-DARI-SHOPEE";
   const youtubePlaylistUrl =
     "https://music.youtube.com/playlist?list=PLZPodkq2CagfHuGtkJEY-vQvWgkNJBtp7&si=PZNzep2RLzm1ZzEf";
   const whatsappUrl = `https://wa.me/6285800509720?text=${encodeURIComponent("Makasih yaa kejutannyaa, muahhh ❤️")}`; // GANTI DENGAN NOMOR WA ANDA
@@ -102,7 +103,7 @@ const Surprise = () => {
           <div className="p-6 bg-[#FEEA34] border-4 border-black rounded-2xl shadow-[8px_8px_0_#0F172A] transform rotate-2">
             <section>
               <h2 className="text-2xl md:text-3xl font-black text-center text-gray-800 mb-6 [text-shadow:_2px_2px_0_white]">
-                Beberapa Alasan Aku Masih Sayang Kamu
+                Beberapa Alasan Aku Sayang Kamu
               </h2>
               <div className="grid grid-cols-1 gap-4 font-sans">
                 <div className="p-3 bg-white/80 rounded-lg shadow-inner">
