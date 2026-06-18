@@ -6,7 +6,7 @@ import Surprise from "@/components/Surprise";
 import Image from "next/image";
 
 export default function Home() {
-  const birthday = "2026-06-19T23:42:00";
+  const birthday = "2026-06-18T23:44:00";
 
   const isBirthdayPassed = () => new Date() > new Date(birthday);
 
