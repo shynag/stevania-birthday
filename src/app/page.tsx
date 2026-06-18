@@ -6,7 +6,7 @@ import Surprise from "@/components/Surprise";
 import Image from "next/image";
 
 export default function Home() {
-  const birthday = "2026-06-19T00:00:00";
+  const birthday = "2026-06-19T00:40:00";
 
   const isBirthdayPassed = () => new Date() > new Date(birthday);
 
@@ -42,7 +42,8 @@ export default function Home() {
               />
             </div>
             {/* Tombol Demo */}
-            {(process.env.NODE_ENV === "development" || process.env.NEXT_PUBLIC_SHOW_DEMO_BUTTON === "true") && (
+            {(process.env.NODE_ENV === "development" ||
+              process.env.NEXT_PUBLIC_SHOW_DEMO_BUTTON === "true") && (
               <div className="mt-8">
                 <button
                   onClick={handleCountdownComplete}
