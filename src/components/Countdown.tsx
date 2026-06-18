@@ -32,22 +32,24 @@ const Countdown = ({
   targetDate: string;
   onComplete: () => void;
 }) => {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(
-    calculateTimeLeft(targetDate),
-  );
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
   useEffect(() => {
-    if (!timeLeft) {
-      onComplete();
-      return;
-    }
+    // Set initial time on the client
+    setTimeLeft(calculateTimeLeft(targetDate));
 
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft(targetDate));
+    const timer = setInterval(() => {
+      const newTimeLeft = calculateTimeLeft(targetDate);
+      if (newTimeLeft) {
+        setTimeLeft(newTimeLeft);
+      } else {
+        clearInterval(timer);
+        onComplete();
+      }
     }, 1000);
 
-    return () => clearTimeout(timer);
-  }, [timeLeft, targetDate, onComplete]);
+    return () => clearInterval(timer);
+  }, [targetDate, onComplete]);
 
   if (!timeLeft) {
     return null; // Return null because the parent will handle the view change
