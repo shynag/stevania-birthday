@@ -13,7 +13,8 @@ const Surprise = () => {
     "/person/foto5.jpg",
     "/person/foto6.jpg",
   ];
-  const voucherCode = "KODE-VIDIO-DARI-SHOPEE";
+  // Read voucher code from environment (exposed to client by NEXT_PUBLIC_ prefix)
+  const voucherCode = process.env.NEXT_PUBLIC_VOUCHER_CODE || "KODE-VIDIO-DARI-SHOPEE";
   const youtubePlaylistUrl =
     "https://music.youtube.com/playlist?list=PLZPodkq2CagfHuGtkJEY-vQvWgkNJBtp7&si=PZNzep2RLzm1ZzEf";
   const whatsappUrl = `https://wa.me/6285800509720?text=${encodeURIComponent("Makasih yaa kejutannyaa, muahhh ❤️")}`; // GANTI DENGAN NOMOR WA ANDA
